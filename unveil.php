@@ -5,7 +5,7 @@ Description: "Lazy Load" Ladetechnik für Bilder in WordPress auf Basis des leic
 Author: Sergej M&uuml;ller
 Author URI: http://wpcoder.de
 Plugin URI: https://github.com/sergejmueller/unveil-wordpress-plugin
-Version: 0.0.1
+Version: 0.0.2
 */
 
 
@@ -44,7 +44,7 @@ final class Unveil {
 	* Class constructor
 	*
 	* @since   0.0.1
-	* @change  0.0.1
+	* @change  0.0.2
 	*/
 
 	public function __construct()
@@ -57,6 +57,13 @@ final class Unveil {
 		/* Hooks */
 		add_filter(
 			'the_content',
+			array(
+				__CLASS__,
+				'prepare_images'
+			)
+		);
+		add_filter(
+			'post_thumbnail_html',
 			array(
 				__CLASS__,
 				'prepare_images'
@@ -76,26 +83,21 @@ final class Unveil {
 	* Prepare content images for unveil usage
 	*
 	* @since   0.0.1
-	* @change  0.0.1
+	* @change  0.0.2
 	*
 	* @param   string  $content  Original post content
 	* @param   string  $content  Modified post content
 	*/
 
 	public static function prepare_images($content) {
-		/* CSS class LIKE %wp-image-% */
-		if ( strpos($content, 'wp-image-') === false ) {
-			return $content;
-		}
-
 		/* Empty gif */
 		$null = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
 
 		/* Replace images */
 		return preg_replace(
 			array(
-				'#<img(.+?)(wp-image-.+?)src=["\'](.+?)["\'](.*?)/>#',
-				'#<img(.+?)src=["\'](.+?)["\'](.+?)(wp-image-.+?)/>#'
+				'#<img(.+?)((?:wp-image-|wp-post-image).+?)src=["\'](.+?)["\'](.*?)/>#',
+				'#<img(.+?)src=["\'](.+?)["\'](.+?)((?:wp-image-|wp-post-image).+?)/>#'
 			),
 			array(
 				'<img$1$2src="' .$null. '" data-src="$3"$4/>',
@@ -110,7 +112,7 @@ final class Unveil {
 	* Print unveil scripts in footer
 	*
 	* @since   0.0.1
-	* @change  0.0.1
+	* @change  0.0.2
 	*/
 
 	public static function print_scripts() {
@@ -133,7 +135,7 @@ final class Unveil {
 		$wp_scripts->add_data(
 			'unveil',
 			'data',
-			'jQuery(document).ready(function(){ jQuery("img[class*=wp-image-]").unveil(); });'
+			'jQuery(document).ready(function(){ jQuery("img[class*=wp-image-],img[class*=wp-post-image]").unveil(); });'
 		);
 	}
 }
