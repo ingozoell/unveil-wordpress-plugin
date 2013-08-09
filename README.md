@@ -38,7 +38,7 @@ Das _Unveil WordPress-Plugin_ sollte mit jedem WordPress-konformen Theme fehlerf
 
 ### Formatierung
 
-Optional können noch nicht geladene Bilder als Platzhalter via CSS dekoriert werden. Denkbar wäre ein punktierter Rahmen als eine Art visuelle Abgrenzung der Bilder. Auch ein Loader macht sich gut.
+Optional können noch nicht geladene Bilder als Platzhalter via Theme-CSS dekoriert werden. Denkbar wäre ein punktierter Rahmen als eine Art visuelle Abgrenzung der Bilder. Auch ein Loader macht sich gut.
 
 ```css
 img[src*='data:image/gif;base64'] {
