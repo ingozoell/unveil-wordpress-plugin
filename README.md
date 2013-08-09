@@ -11,9 +11,10 @@ Darstellung der Funktionsweise des Plugins [auf YouTube](http://www.youtube.com/
 
 ### Vorteile
 
-- Das _Unveil WordPress-Plugin_ kann jederzeit gefahrlos deaktiviert werden, da an den Artikeln in der Blog-Datenbank keine Änderungen vorgenommen werden.
+- Das _Unveil WordPress-Plugin_ kann jederzeit gefahrlos aktiviert und deaktiviert werden, da an den Artikeln bzw. in der Blog-Datenbank keine Änderungen vorgenommen werden.
 - Funktioniert mit jedem Caching-Plugin - auch mit [Cachify](http://cachify.de).
 - Korrekte Funktionsweise der _Lazy Load_ Technik: Beim Aufruf der Blogseiten werden Bilder erst nach Bedarf nachgeladen und nicht wie bei zahlreichen anderen Lösungen erst komplett geladen und dann bei Bedarf angezeigt. Ein Traffic-lastiger und Performance-bedeutender Unterschied.
+- Keine Einstellungen vonnöten. Aktivieren, läuft.
 - Schlicht und geschwind in der Ausführung.
 
 
