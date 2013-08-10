@@ -2,11 +2,18 @@
 
 Immer mehr Studien zu Performance-Optimierung von Webseiten belegen die Wirksamkeit der sogenannten _Lazy Load_ Technik für Bilder: Der Geschwindigkeitsvorteil einer Webseite ergibt sich durch die reduzierte Menge an geladenen Grafiken. Beim Seitenaufruf werden nicht restlos alle Bilder vom Server angefordert und abgebildet, sondern nur die kleine Auswahl, die sich im Blickwinkel des Betrachters befindet. Bewegt sich der Leser innerhalb der Seite (= scrollt), lädt [Unveil.js](https://github.com/luis-almeida/unveil) benötigte Bilder dynamisch nach. Je nach Bildgröße ergibt sich für den Nutzer solch einer Seite nahezu kein visueller Unterschied bzw. bringt keinerlei Nachteile mit sich.
 
-Nach der Inbetriebnahme des WordPress-Plugins laden Blogseiten deutlich schneller, da weniger Bytes durch die Leitung transferiert werden. Auch die Anzahl an parallelen (und beschränkten) Anfragen zum Server reduziert sich und beschleunigt den Ladevorgang zusätzlich.
+Nach der Inbetriebnahme des WordPress-Plugins laden Blogseiten deutlich schneller, da weniger Bytes durch die Leitung transferiert werden. Auch die Anzahl an parallelen (und beschränkten) Anfragen zum Server reduziert sich und beschleunigt den Ladevorgang zusätzlich. Optimal auch für Mobile-optimierte WordPress-Projekte.
 
 
 ### Video
 Darstellung der Funktionsweise des Plugins [auf YouTube](http://www.youtube.com/watch?v=tMv5tl3Q4Aw). Beim Scrollen der Webseite (Fenster oben) werden Bilder automatisch geladen. Im unteren Fenster (Entwickler-Tools) werden entsprechend stattgefundene Requests abgebildet.
+
+
+### Messwerte
+Nachfolgende Vergleichswerte verdeutlichen den erzeugten Performance-Gewinn: Eine Beispielsseite mit aktivem _Unvail für WordPress_ ist fast doppelt so klein (376 KB vs. 663 KB) und lädt deutlich schneller (1.05 Sekunden vs. 1.65 Sekunden). Beide Werte hängen natürlich von der Bildmenge innerhalb einer Blogseite ab.
+
+- [Unvail für WordPress aktiv](http://d.pr/i/Fpsd)
+- [Unvail für WordPress inaktiv](http://d.pr/i/4WYi)
 
 
 ### Vorteile
