@@ -29,7 +29,7 @@ Nachfolgende Vergleichswerte verdeutlichen den erzeugten Performance-Gewinn: Ein
 ### Beachtenswert
 Das _Unveil WordPress-Plugin_ sollte mit jedem WordPress-konformen Theme fehlerfrei und auf Anhieb funktionieren. Dennoch einige wichtige Punkte aufgelistet:
 
-- Es werden Bilder aus WordPress-Beiträgen berücksichtigt, die über die Mediathek eingefügt wurden und somit automatisch die CSS-Klasse _wp-image-*_ zugewiesen bekommen haben. Auf diese CSS-Klasse baut das komplette Plugin auf.
+- Es werden Bilder in WordPress-Beiträgen berücksichtigt, die über die Mediathek eingefügt oder als Beitragsbild (Post thumbnail) definiert wurden und somit automatisch die CSS-Klassen _wp-image-*_ bzw. _wp-post-image_ zugewiesen bekommen haben. Auf diese CSS-Klasse baut das komplette Plugin auf.
 - Das Theme-Template _footer.php_ muss den WordPress-Funktionsaufruf _wp_footer()_ beinhalten. An dieser Stelle wird das erforderliche JavaScript geschrieben.
 - Beim Seitenaufruf bekommen alle Beitragsbilder automatisch eine leere Grafik zugewiesen. Dies verhindert den ungewünschten Ladevorgang der Bildelemente im Browser. Das jQuery-Plugin _Unveil_ sorgt dafür, dass nur die sichtbaren Bilder vom Server geladen und angezeigt werden.
 - Es ist davon auszugehen, dass Beitragsbilder von Google nicht länger indexiert werden können, da diese per Default nicht geladen werden.
