@@ -80,62 +80,62 @@ final class Unveil {
 
 
 	/**
-		* Prepare content images for unveil usage
-		*
-		* @since   0.0.1
-		* @change  0.0.3
-		*
-		* @param   string  $content  Original post content
-		* @param   string  $content  Modified post content
-		*/
+	* Prepare content images for unveil usage
+	*
+	* @since   0.0.1
+	* @change  0.0.3
+	*
+	* @param   string  $content  Original post content
+	* @param   string  $content  Modified post content
+	*/
 
-		public static function prepare_images($content) {
-			/* Empty gif */
-			$null = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+	public static function prepare_images($content) {
+		/* Empty gif */
+		$null = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
 
-			/* Replace images */
-			return preg_replace(
-				array(
-					'#<img(.+?)((?:wp-image-|wp-post-image).+?)src=["\'](.+?)["\'](.*?)/>(?!</noscript>)#',
-					'#<img(.+?)src=["\'](.+?)["\'](.+?)((?:wp-image-|wp-post-image).+?)/>(?!</noscript>)#'
-				),
-				array(
-					'<img$1$2src="' .$null. '" data-src="$3"$4 style="display:none"/><noscript><img$1$2src="$3"$4/></noscript>',
-					'<img$1src="' .$null. '" data-src="$2"$3$4 style="display:none"/><noscript><img$1src="$2"$3$4/></noscript>'
-				),
-				$content
-			);
-		}
-
-
-		/**
-		* Print unveil scripts in footer
-		*
-		* @since   0.0.1
-		* @change  0.0.3
-		*/
-
-		public static function print_scripts() {
-			/* Globals */
-			global $wp_scripts;
-
-			/* Register script */
-			wp_enqueue_script(
-				'unveil',
-				plugins_url(
-					'/js/jquery.unveil.min.js',
-					__FILE__
-				),
-				array('jquery'),
-				'',
-				true
-			);
-
-			/* Touch script */
-			$wp_scripts->add_data(
-				'unveil',
-				'data',
-				'jQuery(document).ready(function(){ jQuery("img[class*=wp-image-],img[class*=wp-post-image]").show(0).unveil(); });'
-			);
-		}
+		/* Replace images */
+		return preg_replace(
+			array(
+				'#<img(.+?)((?:wp-image-|wp-post-image).+?)src=["\'](.+?)["\'](.*?)/>(?!</noscript>)#',
+				'#<img(.+?)src=["\'](.+?)["\'](.+?)((?:wp-image-|wp-post-image).+?)/>(?!</noscript>)#'
+			),
+			array(
+				'<img$1$2src="' .$null. '" data-src="$3"$4 style="display:none"/><noscript><img$1$2src="$3"$4/></noscript>',
+				'<img$1src="' .$null. '" data-src="$2"$3$4 style="display:none"/><noscript><img$1src="$2"$3$4/></noscript>'
+			),
+			$content
+		);
 	}
+
+
+	/**
+	* Print unveil scripts in footer
+	*
+	* @since   0.0.1
+	* @change  0.0.3
+	*/
+
+	public static function print_scripts() {
+		/* Globals */
+		global $wp_scripts;
+
+		/* Register script */
+		wp_enqueue_script(
+			'unveil',
+			plugins_url(
+				'/js/jquery.unveil.min.js',
+				__FILE__
+			),
+			array('jquery'),
+			'',
+			true
+		);
+
+		/* Touch script */
+		$wp_scripts->add_data(
+			'unveil',
+			'data',
+			'jQuery(document).ready(function(){ jQuery("img[class*=wp-image-],img[class*=wp-post-image]").show(0).unveil(); });'
+		);
+	}
+}
