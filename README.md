@@ -62,8 +62,12 @@ img[class*=wp-post-image] {
 ```
 
 
-## Autor
+### Autor
 *Sergej Müller* / [Google+](https://plus.google.com/110569673423509816572?rel=author) / [Twitter](https://twitter.com/wpSEO) / [WordPress-Plugins](http://wpcoder.de)
+
+
+### Flattr
+[![Flattr](http://api.flattr.com/button/flattr-badge-large.png)](http://flattr.com/thing/1779150/sergejmuellerunveil-wordpress-plugin-on-GitHub)
 
 
 ### Todos
