@@ -32,7 +32,7 @@ Das _Unveil WordPress-Plugin_ sollte mit jedem WordPress-konformen Theme fehlerf
 - Es werden Bilder in WordPress-Beiträgen berücksichtigt, die über die Mediathek eingefügt oder als Beitragsbild (Post thumbnail) definiert wurden und somit automatisch CSS-Klassen _wp-image-*_ bzw. _wp-post-image_ zugewiesen bekommen haben. Auf genannte CSS-Klassen baut das komplette Plugin auf.
 - Das Theme-Template _footer.php_ muss den WordPress-Funktionsaufruf _wp_footer()_ beinhalten. An dieser Stelle wird das erforderliche JavaScript geschrieben.
 - Beim Seitenaufruf bekommen alle Beitragsbilder automatisch eine leere Grafik zugewiesen. Dies verhindert den ungewünschten Ladevorgang der Bildelemente im Browser. Das jQuery-Plugin _Unveil_ sorgt dafür, dass nur die sichtbaren Bilder vom Server geladen und angezeigt werden.
-- Es ist davon auszugehen, dass Beitragsbilder von Google nicht länger indexiert werden können, da diese per Default nicht geladen werden.
+- Für Suchmaschinen und Nutzer ohne aktiviertes JavaScript liefert das WordPress-Plugin seit Version 0.0.3 das jeweilige Bild im ```noscript```-Tag aus. Auf diese Weise entstehen keinerlei Beeinträchtigungen durch den Einsatz des _Unveil WordPress-Plugins_.
 
 
 ### Inbetriebnahme
@@ -68,7 +68,6 @@ img[class*=wp-post-image] {
 
 ### Todos
 
-- Lösung für Nutzer ohne JavaScript
 - Implementierung der HiDPI-Unterstützung
 
 
@@ -80,6 +79,10 @@ In Entwickler-Tools des Browsers (Reiter _Netzwerk_ o.ä.) erkennt man wunderbar
 
 
 ### Changelog
+
+###### Version: 0.0.3
+- Unterstützung für Nutzer ohne JavaScript
+- Sicherstellung der Bildindexierung durch Google
 
 ###### Version: 0.0.2
 - Berücksichtigung der Beitragsbilder (Thumbnails)
