@@ -35,14 +35,6 @@ Das _Unveil WordPress-Plugin_ sollte mit jedem WordPress-konformen Theme fehlerf
 - Für Suchmaschinen und Nutzer ohne aktiviertes JavaScript liefert das WordPress-Plugin seit Version 0.0.3 das jeweilige Bild im ```noscript```-Tag aus. Auf diese Weise entstehen keinerlei Beeinträchtigungen durch den Einsatz des _Unveil WordPress-Plugins_.
 
 
-### Inbetriebnahme
-
-1. Obere Punkte beachten
-2. Plugin downloaden (Download ZIP rechts in der Sidebar)
-3. Ordner ins _plugins_ WordPress-Verzeichnis kopieren
-4. _Unveil für WordPress_ aktivieren
-
-
 ### Formatierung
 
 Optional können noch nicht geladene Bilder als Platzhalter via Theme-CSS dekoriert werden. Denkbar wäre ein punktierter Rahmen als eine Art visuelle Abgrenzung der Bilder. Auch ein Loader macht sich gut.
@@ -61,13 +53,20 @@ img[class*=wp-post-image] {
 }
 ```
 
+### Inbetriebnahme
 
-### Autor
-*Sergej Müller* / [Google+](https://plus.google.com/110569673423509816572?rel=author) / [Twitter](https://twitter.com/wpSEO) / [WordPress-Plugins](http://wpcoder.de)
+1. Obere Punkte beachten
+2. Plugin downloaden (```Download ZIP``` rechts in der Sidebar)
+3. Ordner ins _plugins_ WordPress-Verzeichnis kopieren
+4. _Unveil für WordPress_ aktivieren
 
 
 ### Flattr
 [![Flattr](http://api.flattr.com/button/flattr-badge-large.png)](http://flattr.com/thing/1779150/sergejmuellerunveil-wordpress-plugin-on-GitHub)
+
+
+### Autor
+*Sergej Müller* / [Google+](https://plus.google.com/110569673423509816572?rel=author) / [Twitter](https://twitter.com/wpSEO) / [WordPress-Plugins](http://wpcoder.de)
 
 
 ### Todos
