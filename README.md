@@ -83,6 +83,9 @@ In Entwickler-Tools des Browsers (Reiter _Netzwerk_ o.ä.) erkennt man wunderbar
 
 ### Changelog
 
+###### Version: 0.0.4
+- Keine Bildbehandlung bei Feeds
+
 ###### Version: 0.0.3
 - Unterstützung für Nutzer ohne JavaScript
 - Sicherstellung der Bildindexierung durch Google

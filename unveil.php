@@ -5,7 +5,7 @@ Description: "Lazy Load" Ladetechnik für Bilder in WordPress auf Basis des leic
 Author: Sergej M&uuml;ller
 Author URI: http://wpcoder.de
 Plugin URI: https://github.com/sergejmueller/unveil-wordpress-plugin
-Version: 0.0.3
+Version: 0.0.4
 */
 
 
@@ -15,7 +15,7 @@ defined('ABSPATH') OR exit;
 
 /* Fire */
 add_action(
-	'plugins_loaded',
+	'wp',
 	array(
 		'Unveil',
 		'instance'
@@ -44,13 +44,13 @@ final class Unveil {
 	* Class constructor
 	*
 	* @since   0.0.1
-	* @change  0.0.2
+	* @change  0.0.4
 	*/
 
 	public function __construct()
   	{
   		/* Go home */
-		if ( is_admin() OR (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) OR (defined('DOING_CRON') && DOING_CRON) OR (defined('DOING_AJAX') && DOING_AJAX) OR (defined('XMLRPC_REQUEST') && XMLRPC_REQUEST) ) {
+		if ( is_feed() OR is_admin() OR (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) OR (defined('DOING_CRON') && DOING_CRON) OR (defined('DOING_AJAX') && DOING_AJAX) OR (defined('XMLRPC_REQUEST') && XMLRPC_REQUEST) ) {
 			return;
 		}
 
